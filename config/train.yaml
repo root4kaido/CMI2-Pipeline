@@ -1,0 +1,16 @@
+hydra:
+  job:
+    name: train
+    chdir: true
+  run:
+    dir: ${output_dir}
+  sweep:
+    dir: ${output_dir}
+
+data_dir: /home/user/work/CMI2024/data/child-mind-institute-problematic-internet-use
+output_dir: /home/user/work/CMI2024/Git/src/results/${exp_name}
+oof_path:
+
+model_name: CustomXGBClassifier
+exp_name: exp87
+

@@ -1,0 +1,17 @@
+hydra:
+  job:
+    name: inference
+    chdir: true
+  run:
+    dir: ${output_dir}
+  sweep:
+    dir: ${output_dir}
+
+data_dir: /home/user/work/CMI2024/data/child-mind-institute-problematic-internet-use
+output_dir: /home/user/work/CMI2024/Git/src/results/${exp_name}
+model_path: /home/user/work/CMI2024/Git/src/results/exp87/total_models.pkl
+
+model_name: CustomLGBMRegressor
+exp_name: exp87
+phase: train
+
