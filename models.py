@@ -127,6 +127,9 @@ def get_model_and_objective(model_name) -> Tuple[Any, Any]:
         raise ValueError(f"Unsupported model: {model_name}")
 
 
+"""# objective"""
+
+
 def lgb_objective(
     trial, df_train, df_train_oof, feature_cols, target_col, num_cols, seed
 ):

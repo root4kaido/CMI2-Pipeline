@@ -111,10 +111,15 @@ def main(cfg):
     """### PreProcess"""
 
     df_test = pd.read_csv(root / f"{phase}.csv")
-    df_test, feature_cols = preprocess(df_test, phase, root, cat_cols, num_cols)
+    if (phase == "train") or (phase == "pseudo"):
+        df_test, feature_cols = preprocess(df_test, "train", root, cat_cols, num_cols)
+    else:
+        df_test, feature_cols = preprocess(df_test, "test", root, cat_cols, num_cols)
 
-    if phase == "train":
+    if phase == "pseudo":
         df_test = df_test[df_test[target_col].isna()]
+    elif phase == "train":
+        df_test = df_test[df_test[target_col].notna()]
 
     """### Prediction"""
 
@@ -129,6 +134,11 @@ def main(cfg):
     df_test["sii"] = test_pred_voted.reshape(-1)
 
     if phase == "train":
+        print(output_dir)
+
+        np.save(output_dir / "train_submission", test_pred)
+        df_test["sii"].to_csv(output_dir / "train_submission.csv")
+    elif phase == "pseudo":
         np.save(output_dir / "pseudo_submission", test_pred)
         df_test["sii"].to_csv(output_dir / "pseudo_submission.csv")
     else:
