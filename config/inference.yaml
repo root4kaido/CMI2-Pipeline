@@ -8,10 +8,12 @@ hydra:
     dir: ${output_dir}
 
 data_dir: /home/user/work/CMI2024/data/child-mind-institute-problematic-internet-use
-output_dir: /home/user/work/CMI2024/Git/src/results/${exp_name}
-model_path: /home/user/work/CMI2024/Git/src/results/exp87/total_models.pkl
+output_dir: /home/user/work/CMI2024/CMI2-Pipeline/results/${exp_name}
+model_path: /home/user/work/CMI2024/CMI2-Pipeline/results/lgbm_regressor_pretrain/total_models.pkl
 
+# "CustomLGBMRegressor" or "CustomXGBRegressor" or "CustomLGBMClassifier" or "CustomXGBClassifier"
 model_name: CustomLGBMRegressor
-exp_name: exp87
+exp_name: lgbm_regressor
+# "train" or "pseudo" or "test"
 phase: train
 
