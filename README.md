@@ -52,8 +52,11 @@ Each inference operation generates two output files:
 - A .npy file containing the pre-voting ensemble data
 - A .csv file containing the post-voting results
 
-The `notebook/cmi-pipeline.ipynb` demonstrates how to execute multiple inferences and perform ensemble operations. Examples of submitting predictions on Kaggle can be found at the link below.
+ Examples of submitting predictions on Kaggle can be found at the link below:
 https://www.kaggle.com/code/nomorevotch/cmi-pipeline
+I have placed the trained models below: https://www.kaggle.com/datasets/nomorevotch/cmi2-pipeline-results
+
+The `notebook/cmi-pipeline.ipynb` demonstrates how to execute multiple inferences and perform ensemble operations.
 
 ## Total Pipeline
 
